@@ -43,14 +43,9 @@ p {
   color: #333;
 }
 
-/* Header Showcase */
+/* Home Page*/
 
-/* Top right text */
-.top-right {
-  position: absolute;
-  top: 8px;
-  right: 16px;
-}
+/* Header Showcase */
 
 #showcase {
   min-height: 450px;
@@ -70,8 +65,56 @@ p {
   opacity: 0.7;
 }
 
+#showcase2 .bg-image {
+  position: absolute;
+  background: #fff url("../Images/Turtle_Bay.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 450px;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+#showcase3 .bg-image {
+  position: absolute;
+  background: #fff url("../Images/Bull_Hotel.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 450px;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+#showcase4 .bg-image {
+  position: absolute;
+  background: #fff url("../Images/Visitors.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 450px;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+#showcase5 .bg-image {
+  position: absolute;
+  background: #fff url("../Images/events.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 450px;
+  z-index: -1;
+  opacity: 0.7;
+}
+
 #showcase h1 {
-  padding-top: 100px;
+  padding-top: 55px;
   padding-bottom: 0;
   font-weight: bold;
   font-size: 45px;
@@ -177,13 +220,14 @@ p {
 }
 
 .active {
-  background-color: #4caf50; /* Add an active/current color */
+  background-color: #4caf50;  /* Add an active/current color */
 }
 
 /* Footer*/
 
 #main-footer {
   padding: 2em;
+  margin-bottom: 65px;
   background: black;
   color: white;
   text-align: center;

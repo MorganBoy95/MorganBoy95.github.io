@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Food & Drink</title>
+</head>
+
+<body>
+    <!-- Header Showcase-->
+    <header id="showcase4" class="grid">
+        <div class="bg-image">
+        </div>
+        <div class="content-wrap">
+            <p id="temp" class="temp" style="padding-top: 50px; padding-bottom: 0;"></p>
+            <p id="desc" class="desc" style="padding-top: 5px; padding-bottom: 0;"></p>
+            <h1>Tourist Centre</h1>
+            <p>Peterborough is a rapidly-growing city based in the heart of rural east England and with a population of
+                around 200,000. It shares borders with Cambridgeshire, Lincolnshire, Northamptonshire and Rutland.</p>
+        </div>
+    </header>
+
+    <!-- Main Area-->
+    <main id="main">
+        <!--Section A-->
+        <section id="section-a" class="grid">
+            <div id="root">
+                <div class="container">
+
+                </div>
+            </div>
+        </section>
+        <!--Section B-->
+        <section id="section-b" class="grid">
+            <div id="map"></div>
+        </section>
+    </main>
+
+    <!-- Footer-->
+    <footer id="main-footer" class="grid">
+        <div class="div">Go Peterborough</div>
+        <div class="div">Project By SID-1629603</div>
+    </footer>
+
+    <!-- Bottom Icon Nav-->
+    <div class="icon-bar">
+        <a href="./hotels.html"><i class="fa fa-hotel"></i></a>
+        <a href="./food&drink.html"><i class="fa fa-cutlery"></i></a>
+        <a href="./home.html"><i class="fa fa-home"></i></a>
+        <a class="active" href="#showcase"><i class="fa fa-info-circle"></i></a>
+        <a href="./events.html"><i class="fa fa-calendar"></i></a>
+    </div>
+
+    <script src="../JS/police.js"></script>
+
+    <script>
+        // Note: This example requires that you consent to location sharing when
+        // prompted by your browser. If you see the error "The Geolocation service
+        // failed.", it means you probably did not give permission for the browser to
+        // locate you.
+        var map, infoWindow;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: -34.397, lng: 150.644 },
+                zoom: 6
+            });
+            infoWindow = new google.maps.InfoWindow;
+
+            // Try HTML5 geolocation.
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    var pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent('Location found.');
+                    infoWindow.open(map);
+                    map.setCenter(pos);
+                }, function () {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                });
+            } else {
+                // Browser doesn't support Geolocation
+                handleLocationError(false, infoWindow, map.getCenter());
+            }
+        }
+
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(browserHasGeolocation ?
+                'Error: The Geolocation service failed.' :
+                'Error: Your browser doesn\'t support geolocation.');
+            infoWindow.open(map);
+        }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRE-G1FLRIHEqueLJlgAg96B7CoZ05KsA&callback=initMap">
+        </script>
+</body>
+
+</html>
